@@ -1,0 +1,45 @@
+{
+  "name": "react-media-view",
+  "version": "1.0.0",
+  "description": "Media view UI library for React.js apps.",
+  "main": "dist/ReactMediaView.js",
+  "scripts": {
+    "build:babel": "babel --copy-files --out-dir dist --ignore *.test.js src",
+    "build:watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bedirhankaradogan/react-media-view.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Bedirhan Karadoğan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bedirhankaradogan/react-media-view/issues"
+  },
+  "homepage": "https://github.com/bedirhankaradogan/react-media-view#readme",
+  "peerDependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.0",
+    "classnames": "^2.2.6",
+    "css-loader": "^1.0.0",
+    "node-sass": "^4.9.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
+  }
+}

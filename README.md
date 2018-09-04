@@ -1,2 +1,2 @@
-# web-media-gallery
-Media gallery UI library for web apps.
+# react-media-view
+Media view UI library for React.js apps.
