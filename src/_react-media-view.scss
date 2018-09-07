@@ -1,3 +1,44 @@
-.react-media-view {
+:root {
+  --grid-template-column-count: 3;
+  --grid-gap: 1px;
+  --row-height: 200px;
+}
 
+.react-media-view-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .react-media-view {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-template-column-count), 1fr);
+    grid-gap: var(--grid-gap);
+    width: 100%;
+  
+    .react-media-view-element {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: var(--row-height);
+      background-color: pink;
+      overflow: hidden;
+  
+      .react-media-view-element-image {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .react-media-view-element-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 2;
+      }
+    }
+  }
 }
