@@ -15,6 +15,7 @@ class ReactMediaView extends Component {
     stretchLastItem: PropTypes.bool,
     overlayTrigger: PropTypes.oneOf(["mount", "hover", "click", "toggle"]),
     overlay: PropTypes.func,
+    image: PropTypes.func,
     onMouseEnter: PropTypes.func,
     onMouseLeave: PropTypes.func,
     onClick: PropTypes.func
@@ -31,11 +32,27 @@ class ReactMediaView extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      computedMedia: this.getComputedMedia(props)
+    }
+  }
+
+  shouldComponentUpdate(nextProps) {
+    if(this.props.media !== nextProps.media) {
+      this.setState({
+        computedMedia: this.getComputedMedia(nextProps)
+      });
+    }
+    
+    return true;
+  }
+
+  getComputedMedia(props) {
     const {
       media,
       overlayTrigger,
       overlay
-    } = this.props;
+    } = props;
     let computedMedia = media;
 
     if(overlay) {
@@ -45,12 +62,10 @@ class ReactMediaView extends Component {
       }));
     }
 
-    this.state = {
-      computedMedia
-    }
+    return computedMedia;
   }
 
-  handleMouseEnter = (key, event) => {
+  handleMouseEnter = (key, medium, event) => {
     const {
       overlayTrigger,
       overlay,
@@ -68,11 +83,11 @@ class ReactMediaView extends Component {
     }
 
     if(onMouseEnter) {
-      onMouseEnter(event);
+      onMouseEnter(medium, event);
     }
   }
 
-  handleMouseLeave = (key, event) => {
+  handleMouseLeave = (key, medium, event) => {
     const {
       overlayTrigger,
       overlay,
@@ -90,11 +105,11 @@ class ReactMediaView extends Component {
     }
 
     if(onMouseLeave) {
-      onMouseLeave(event);
+      onMouseLeave(medium, event);
     }
   }
 
-  handleClick = (key, event) => {
+  handleClick = (key, medium, event) => {
     const {
       overlayTrigger,
       overlay,
@@ -121,7 +136,7 @@ class ReactMediaView extends Component {
     }
 
     if(onClick) {
-      onClick(event);
+      onClick(medium, event);
     }
   }
 
@@ -133,7 +148,8 @@ class ReactMediaView extends Component {
       gap,
       emptyState,
       stretchLastItem,
-      overlay
+      overlay,
+      image
     } = this.props;
     const {computedMedia} = this.state;
     const mediumCount = computedMedia.length;
@@ -153,7 +169,7 @@ class ReactMediaView extends Component {
         <div className={containerClassName}>
           {computedMedia.map((medium, key) => {
               const {
-                url,
+                src,
                 isOverlayVisible
               } = medium;
               let elementStyle = {};
@@ -168,11 +184,13 @@ class ReactMediaView extends Component {
                 <div key={key.toString()}
                      className={"react-media-view-element"}
                      style={elementStyle}
-                     onMouseEnter={this.handleMouseEnter.bind(this, key)}
-                     onMouseLeave={this.handleMouseLeave.bind(this, key)}
-                     onClick={this.handleClick.bind(this, key)}>
-                  <img className={"react-media-view-element-image"}
-                       src={url}/>
+                     onMouseEnter={this.handleMouseEnter.bind(this, key, medium)}
+                     onMouseLeave={this.handleMouseLeave.bind(this, key, medium)}
+                     onClick={this.handleClick.bind(this, key, medium)}>
+                  {image ?
+                    image(medium) :
+                    (<img className={"react-media-view-element-image"}
+                          src={src}/>)}
 
                   {overlay && isOverlayVisible &&
                   <div className={"react-media-view-element-overlay"}>
