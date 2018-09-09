@@ -6,8 +6,8 @@ import "./_react-media-view.scss";
 
 class ReactMediaView extends Component {
   static propTypes = {
-    className: PropTypes.string,
     media: PropTypes.array.isRequired,
+    className: PropTypes.string,
     columnCount: PropTypes.number,
     rowHeight: PropTypes.number,
     gap: PropTypes.number,

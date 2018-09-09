@@ -2,6 +2,7 @@
   "name": "react-media-view",
   "version": "1.0.0",
   "description": "Media view UI library for React.js apps.",
+  "keywords": ["react", "media view", "photo gallery", "react-component"],
   "main": "dist/ReactMediaView.js",
   "scripts": {
     "build:babel": "babel --copy-files --out-dir dist --ignore *.test.js src",
@@ -15,10 +16,15 @@
   "files": [
     "dist"
   ],
-  "author": "Bedirhan Karadoğan",
+  "author": {
+    "name": "Bedirhan Karadoğan",
+    "email": "karadogan.bedirhan@gmail.com",
+    "url": "https://bedirhank.com"
+  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bedirhankaradogan/react-media-view/issues"
+    "url": "https://github.com/bedirhankaradogan/react-media-view/issues",
+    "email": "karadogan.bedirhan@gmail.com"
   },
   "homepage": "https://github.com/bedirhankaradogan/react-media-view#readme",
   "peerDependencies": {
