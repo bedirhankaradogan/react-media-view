@@ -71,9 +71,7 @@ class ReactMediaView extends Component {
       overlay,
       onMouseEnter
     } = this.props;
-    const {
-      computedMedia
-    } = this.state;
+    const {computedMedia} = this.state;
 
     if(overlay && overlayTrigger === "hover") {
       computedMedia[key].isOverlayVisible = true;
@@ -93,9 +91,7 @@ class ReactMediaView extends Component {
       overlay,
       onMouseLeave
     } = this.props;
-    const {
-      computedMedia
-    } = this.state;
+    const {computedMedia} = this.state;
 
     if(overlay && (overlayTrigger === "hover" || overlayTrigger === "click")) {
       computedMedia[key].isOverlayVisible = false;
@@ -115,9 +111,7 @@ class ReactMediaView extends Component {
       overlay,
       onClick
     } = this.props;
-    const {
-      computedMedia
-    } = this.state;
+    const {computedMedia} = this.state;
 
     if(overlay && (overlayTrigger === "click" || overlayTrigger === "toggle")) {
 
