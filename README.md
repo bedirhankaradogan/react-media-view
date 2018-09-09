@@ -23,8 +23,6 @@ npm install --save react-media-view
 
 You can basically use the library with an array of objects which have objects with `src` property.
 
-[Demo](https://drive.google.com/uc?export=view&id=1uSCSSj9tPIt1NKQwceLzPBK05c5q4bJ4)
-
 ```javascript
 import React, {Component} from 'react';
 import ReactMediaView from "react-media-view";
