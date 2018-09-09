@@ -1,6 +1,6 @@
 {
   "name": "react-media-view",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Media view UI library for React.js apps.",
   "keywords": ["react", "media view", "photo gallery", "react-component"],
   "main": "dist/ReactMediaView.js",
