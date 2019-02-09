@@ -93,6 +93,6 @@ export default ReactMediaViewExample;
 
 MIT ©
 
-## Support 
+## Support
 
 [Support me on Patreon](https://www.patreon.com/bedirhankaradogan)
