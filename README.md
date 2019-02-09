@@ -95,4 +95,4 @@ MIT ©
 
 ## Support 
 
-[Bedirhan Karadoğan](http://bedirhank.com) | [Patreon](https://www.patreon.com/bedirhankaradogan)
+[Bedirhan Karadoğan](http://bedirhank.com) | [Support me on Patreon](https://www.patreon.com/bedirhankaradogan)
